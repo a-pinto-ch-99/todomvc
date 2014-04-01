@@ -1,6 +1,6 @@
 <?php
 
-class HomeController extends BaseController {
+class TestController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -20,9 +20,11 @@ class HomeController extends BaseController {
 		return View::make('hello');
 	}
   
-  	public function create()
+  public function index($name, $id)
 	{
-		return View::make('hello');
+    return View::make('toto', array('name' => $name, 'id' => $id));
 	}
 
 }
+
+?>

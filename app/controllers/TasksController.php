@@ -1,6 +1,6 @@
 <?php
 
-class HomeController extends BaseController {
+class TasksController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -13,16 +13,16 @@ class HomeController extends BaseController {
 	|
 	|	Route::get('/', 'HomeController@showWelcome');
 	|
-	*/
-
-	public function showWelcome()
-	{
-		return View::make('hello');
-	}
-  
+	*/  
   	public function create()
 	{
-		return View::make('hello');
+      return View::make('tasks.create');
 	}
 
+    	public function store()
+	{
+        Task::create(Input::all());
+        return Redirect::route('tasks.create');
+	}
+  
 }
